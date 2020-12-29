@@ -1,35 +1,10 @@
 <template>
   <div class="container">
     <header>
-      <nav class="nav-bar">
-        <ul class="flex">
-          <li class="brand-name">
-            Digital_<br>
-            Profile
-          </li>
-          <div class="left flex">
-          <li><a href="">FIND A JOB</a></li>
-          <li><a href="">MY JOBS</a></li>
-          </div>
-          <li>
-            <div class="user"></div> <i class="fas fa-chevron-down"></i>
-          </li>
-        </ul>
-      </nav>
-      <article class="grid my">
-        <aside class="col-1">
-          <h1>Senior UX/UI Designer</h1>
-          <span class="span"> <span class="font-bold">at</span> 
-            <h1> Circlebox Creative</h1>
-          </span> 
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex earumrunt consectetur, quidem veniam laudantium.</p>
-          <button><a href="">VIEW COMPANY</a></button>
-          <button><a href="">APPLY FOR THIS JOB</a></button>
-        </aside>
-        <aside class="col-2"></aside>
-      </article>
-     
+      <Navbar></Navbar>
+      <Hero title="Senior UX/UI Designer" company="Circlebox Creative" companySummary="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex earumrunt consectetur, quidem veniam laudantium."></Hero>
     </header>
+
     <section class="">
        <article class="grid my-2">
         <aside class="col-1">
@@ -130,16 +105,21 @@
 </template>
 
 <script>
+import Navbar from '../components/Navbar'
+import Hero from '../components/Hero'
 export default {
-  name: 'Banner',
+  name: 'Base',
   props: {
     msg: String
+  },
+  components: {
+    Navbar, Hero
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
   header{
     color: #ffff;
     background-color: rgb(35, 170, 223);
@@ -154,7 +134,6 @@ export default {
   }
   li{
     margin: 0.5rem;
-    
   }
   .left{
     margin-left: auto;
@@ -353,15 +332,12 @@ export default {
     color: rgb(35, 170, 223);
     font-weight: bold;
   }
-  @media screen and (max-width:660px){
+  @media screen and (max-width:1024px){
     .grid{
       margin-top: 1.5rem;
       grid-template-columns: 90%;
     }
   }
-   @media screen and (min-width:769px){
-
-   }
   @media screen and (min-width:1100px) {
     .left li{
       font-size: 1rem;
