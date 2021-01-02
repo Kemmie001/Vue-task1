@@ -1,16 +1,17 @@
 <template>
-  <nav class="nav-bar">
+  <nav class="navbar__nav">
     <ul class="flex">
-      <li class="brand-name">
+      <li class="navbar--brand-name list--item">
         Digital_<br>
         Profile
       </li>
       <div class="left flex">
-        <li><a href="">FIND A JOB</a></li>
-        <li><a href="">MY JOBS</a></li>
+        <li class="list--item left__list"><a class="list--item__link" href="">FIND A JOB</a></li>
+        <li class="list--item left__list"><a class="list--item__link" href="">MY JOBS</a></li>
       </div>
-      <li>
-        <div class="user"></div> <i class="fas fa-chevron-down"></i>
+      <li class="list--item">
+        <div class="user"></div> 
+        <i class="fas fa-chevron-down"></i>
       </li>
     </ul>
   </nav>

@@ -1,14 +1,14 @@
 <template>
-  <Banner/>
+  <Base/>
 </template>
 
 <script>
-import Banner from './components/banner.vue'
+import Base from './components/base.vue'
 
 export default {
   name: 'App',
   components: {
-    Banner
+    Base
   }
 }
 </script>

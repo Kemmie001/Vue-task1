@@ -1,66 +1,25 @@
 <template>
   <div class="container">
-    <header>
-      <Navbar></Navbar>
-      <Hero title="Senior UX/UI Designer" company="Circlebox Creative" companySummary="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex earumrunt consectetur, quidem veniam laudantium."></Hero>
+    <header class="header">
+      <Navbar class="header__navbar"></Navbar>
+      <Hero class="header__hero" title="Senior UX/UI Designer" company="Circlebox Creative" companySummary="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex earumrunt consectetur, quidem veniam laudantium."></Hero>
     </header>
-
     <section class="">
        <article class="grid my-2">
         <aside class="col-1">
-          <h1 class="gray para">About this role</h1>
-          <div class="flex">
-            <span class="black-box">
-              CIRLCEBOX
-            </span>
-            <span class="">
-              <h3 class="ml">Senior UX/U1 Designer <span class="gray">(Full Time)</span></h3>
-              <p class="dark-gray ml">Circlebox Creative - Royston, Herrtfordshire, UK</p>
-              <h4 class=" ml">&euro;35-45,000 + Benefits </h4>
-            </span>
-          </div>
-          <p class="para">Lorem ipsum dolor, sit amet consectetur 
-            adipisicing Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam ipsa odio adipisci, fuga odit doloremque quasi, sapiente laborum commodi sed laudantium magnam maiores nemo 
-            voluptatem eos ullam animi eum dicta! elit. 
-            Ex earumrunt consectetur, quidem veniam laudantium.</p>
-         <div class="">
-           <h3 class="para">Skills</h3>
-           <ul class="flex-skills">
-             <li>USER EXPERIENCE</li>
-             <li>USER INTERFACE</li>
-             <li>PHOTOSHOP</li>
-             <li>PROTOTYPES</li>
-             <li>WIREFRAMES</li>
-             <li>PROJECT MANAGEMENT</li>
-             <li>BASIC ANIMATION</li>
-           </ul>
-           <h2>Description</h2>
-          <p class="para">Are you creative, innovative and ahead of the industry standards? We want you on our leading-edge team!</p>
-          <p class="para">
-            As our UX/UI Designer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus laudantium similique ducimus aut esse, maxime tenetur dolorem ipsa? Odit praesentium dolore, recusandae laborum ipsum modi non quas eligendi voluptates voluptatem.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum veritatis sint dolor enim, commodi alias fugit optio iste repudiandae assumenda nihil esse impedit facere eaque delectus perspiciatis illo odit? Sit.
-            You will create visuals/sketches work and be able to work and communicate with the development team to represent ides and new features that we want built and/or implemented.</p>
-          <p class="para">You'll be running the UI/UX show which will include brsinstorming design and usability options, building simple wireframes and conducting usability tests.</p>
-          <p class="para">The skillset:</p>
-         <ul class="">
-           <li>3+ years of industry/agency experience in a digital capacity</li>
-           <li>Strong design portfolio that reflects a deep understanding of interaction design</li>
-           <li>An understanding of design patterns and how design decisions have an impact on the implentation</li>
-           <li>Well-developed communication skills including information ability to articulate creative concepts</li>
-           <li>Solid understanding of web development processes including information architecture,  usability/user experience testing & quality assurance</li>   
-           <li>Clear understanding of usability, user-centered design, and web standards</li>
-         </ul>
-         <p class="para">
-           The who, what, where of us:
-         </p>
-         <p class="para">
-           We started in a small, 2-bedroom apartment in Royston and have grown into a respectable digital design agency with clients all over the world. Over the years Circlebox Creative has gained a reputation of steady growth.
-         </p>
-         </div>
+          <Role 
+          title="Senior UX/U1 Designer" 
+          type="(Full Time)" 
+          company="Circlebox Creative" 
+          jobLocation="Royston, Herrtfordshire, UK"
+          benefit="&euro;35-45,000 + Benefits"
+          />
+           <Skill/>
+           <Description/>
         </aside>
         <aside class="col-2">
           <button class="green-btn">
-            <a href="">Apply for the job</a>
+            <a href="" class="green-btn__link">Apply for the job</a>
           </button>
           <button class="btn">
             <a class="link" href=""><i class="fab fa-facebook"></i>
@@ -77,25 +36,14 @@
             Share on LinkedIn
             </a>
           </button>
-          <div class="job">
-            <p class="">Job URL</p>
-          <button class="btn">
-            <a class="gray-link" href="">https://digitalprofile.io/circlebox/create
-            </a><span class="blue-btn">Copy Link</span>
-          </button>
-          </div>
+          <joblink/>
           <p class="para"><span class="gray">More from </span><a href="" class="blue">Circlebox
              Creative</a></p>
-          <h3 class="para">Senior UX/U1 Designer <span class="gray">(Full Time)</span></h3>
-          <p class="mt">Circlebox Creative - Royston, Hertfordshine, UK</p>
-          <h3 class="para">Web Developer <span class="gray">(Full Time)</span></h3>
-          <p class="mt">Circlebox Creative - Royston, Hertfordshine, UK</p>
-          <h3 class="para"> Junior Designer <span class="gray">(Full Time)</span></h3>
-          <p class="mt">Circlebox Creative - Royston, Hertfordshine, UK</p>
-           <buton class="green-btn">
-          <a href="" class="">Apply for the job</a>
-        </buton>
-        <p class="para"><span class="gray">Looking for employees </span><a href="" class="blue">Post a job!</a></p>
+          <jobs
+          type="(Full Time)" 
+          company="Circlebox Creative" 
+          jobLocation="Royston, Herrtfordshire, UK"/>
+        <p class="paragraph"><span class="gray">Looking for employees </span><a href="" class="blue">Post a job!</a></p>
         </aside>
        
       </article>
@@ -107,24 +55,40 @@
 <script>
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
+import Role from '../components/Main/index'
+import Skill from '../components/Main/skills'
+import Description from '../components/Main/description'
+import Joblink from '../components/Main/joblink'
+import Jobs from '../components/Main/jobs'
 export default {
   name: 'Base',
   props: {
     msg: String
   },
   components: {
-    Navbar, Hero
+    Navbar, Hero,
+    Role, Skill,
+    Description, Joblink,
+    Jobs
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-  header{
+*{
+  padding: 0;
+  margin: 0;
+}
+#app {
+  font-family: Arial, sans-serif;
+  
+}
+  .header{
     color: #ffff;
     background-color: rgb(35, 170, 223);
   }
-  .brand-name{
+  .navbar--brand-name{
     font-size: 1rem;
     font-weight: bold;
   }
@@ -132,17 +96,17 @@ export default {
     display: flex;
     list-style: none;
   }
-  li{
+  .list--item{
     margin: 0.5rem;
   }
   .left{
     margin-left: auto;
     margin-top: 0.5rem
   }
-  .left li{
+  .left__list{
     font-size: 0.7rem
   }
-  li a{
+  .list--item__link{
     color: #fff;
     text-decoration: none;
   }
@@ -163,17 +127,17 @@ export default {
     align-content: center;
   }
   
-  .my{
+  .hero__article{
     margin-top:3rem;
     padding-bottom: 1rem;
   }
-  .my h1{
+  .grid__col-1--head{
     font-size: 1.9rem;
     line-height: 30px;
     width: 100%;
   }
-  .my p{
-    font-size: 0.7rem;
+  .grid__col-1--para{
+    font-size: 0.8rem;
     line-height: 15px;
     word-spacing: 0.2rem;
     font-weight: 300;
@@ -182,7 +146,7 @@ export default {
     width: 80%;
     
   }
-  .span h1{
+  .span__head{
     display: inline;
     word-spacing: 0.3rem;
   }
@@ -196,16 +160,15 @@ export default {
     font-size: 1.5rem;
     font-weight: 50;
   }
-  .my button{
+  .hero__button{
     border: none;
     background-color: rgba(43, 109, 134, 0.5);
-    
     border-radius: 0.3rem;
     margin-top: 1rem;
     margin-right: 1rem;
     padding: 1rem;
   }
-  .my button a{
+  .hero__button--link{
     text-decoration: none;
     color:#ffffff;
     font-weight: bold;
@@ -214,7 +177,7 @@ export default {
     color: hsla(340, 1%, 46%, 0.7);
     padding-bottom: 1rem;
   }
-  .ml{
+  .margin--left{
     margin-left: 1rem;
     margin-top: 0.5rem;
   }
@@ -225,24 +188,23 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    
     border-radius: 0.3rem;
     height: 100px;
     width: 100px;
     font-weight: bold;
   }
-  .para{
+  .paragraph{
     line-height: 25px;
     padding-top: 1rem;
     padding-bottom: 0.5rem;
   }
-  .flex-skills{
+  .main__skills{
     list-style: none;
     margin-bottom: 1rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr) );
   }
-  .flex-skills li {
+  .main__skills__list {
     border: rgb(35, 170, 223) solid 2px;
     text-align: center;
     font-size: 0.7rem;
@@ -250,7 +212,7 @@ export default {
     border-radius: 0.3rem;
     padding: 0.5rem;
   }
-  .mt{
+  .jobs--m-bottom{
     margin-bottom: 1rem;
   }
   .green-btn{
@@ -265,7 +227,7 @@ export default {
     text-align: center;
     font-weight: bold;
   }
-  .green-btn a{
+  .green-btn__link{
     
     color: #fff;
     text-decoration: none;
@@ -318,7 +280,7 @@ export default {
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
-  .job p{
+  .job__paragraph{
     color: hsla(340, 1%, 46%, 0.7);
   }
   .gray-link{
@@ -339,25 +301,27 @@ export default {
     }
   }
   @media screen and (min-width:1100px) {
-    .left li{
+    .left__list{
       font-size: 1rem;
       padding-top: 0.5rem;
     }
-    .brand-name{
+    .navbar--brand-name{
       font-size: 1.5rem;
       padding: 0.5rem;
     }
-    .my h1{
+    .hero__article{
       line-height: 45px;
       font-size: 2.7rem;
     }
     .font-bold{
       font-size: 2.2rem;
   }
-    .my p{
-      width: 70%;
+    .grid__col-1--para{
+      width: 80%;
       font-size: 1.3rem;
       line-height: 30px;
     }
   }
 </style>
+
+
